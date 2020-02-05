@@ -1,9 +1,13 @@
-a = 0xffffffffffff
-b = 0x0000000000f0
-c = a | b
-d = 2 & c
-e = 2 & a
+class t(object):
+    def __init__(self):
+        self.next = None
 
-print("{:#x}".format(c))
-print("{:#x}".format(d))
-print("{:0>12x}".format(e))
+if __name__ == "__main__":
+    a = t()
+    b = t()
+    a.next = b
+    c = a
+    while c.next != None:
+        c = c.next
+    c.next = a
+    pass
