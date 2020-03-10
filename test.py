@@ -7,3 +7,5 @@ e = 2 & a
 print("{:#x}".format(c))
 print("{:#x}".format(d))
 print("{:0>12x}".format(e))
+
+print(1 and -1)

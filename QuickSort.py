@@ -11,6 +11,8 @@ def QuickSort(ls, p, r):
 
 
 def sort(ls, p, r):
+    # all ls[i] <= x
+    # pivot on i + 1 
     x = ls[r]
     i = p - 1
     tmp = 0

@@ -39,6 +39,19 @@ class Heap:
             self.max_heapify(1)
         return self
 
+    def pop(self):
+        self.value[1], self.value[self.heapsize] = self.value[self.heapsize], self.value[1]
+        popitem = self.value.pop()
+        self.heapsize -= 1
+        self.max_heapify(1)
+        return popitem
+
+    def push(self, num):
+        self.value.append(num)
+        self.heapsize += 1
+        self.value[1], self.value[self.heapsize] = self.value[self.heapsize], self.value[1]
+        self.max_heapify(1)
+
     @staticmethod
     def left(i):
         return 2 * i
@@ -57,5 +70,18 @@ if __name__ == "__main__":
     print(a)
     b = Heap(a)
     print(b.value)
-    print(b.sort().value)
+    # print(b.sort().value)
+    ls = []
+    for i in range(3):
+        ls.append(b.pop())
+    print(ls)
+    # print(b.value)
+    # b.push(5)
+    # print(b.value)
+    # b.push(3)
+    # print(b.value)
+
+    # b.push(9)
+    # print(b.value)
+
     pass
