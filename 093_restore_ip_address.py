@@ -1,6 +1,5 @@
 class Solution:
     def restoreIpAddresses(self, s):
-        def restoreIpAddresses(self, s):
         rst = []
         n = len(s)
         if n > 12:

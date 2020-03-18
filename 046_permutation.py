@@ -1,16 +1,12 @@
 class Solution:
     def permute(self, nums):
         self.rst = []
-        self.find([], nums)
-        return self.rst
-        
-    def find(self, combo, rest):
-        if len(rest) == 0:
-            self.rst.append(combo)
-        for i in range(len(rest)):
-            self.find(combo + [rest[i]], rest[:i] + rest[i+1:])
+        def permutation(remains, ans):
+            if not remains:
+                self.rst.append(ans)
 
-if __name__ == "__main__":
-    a = Solution()
-    b = [1,2,3]
-    print(a.permute(b))
+            for i in range(len(remains)):
+                permutation(remains[:i] + remains[i+1:], ans + [remains[i]])
+
+        permutation(nums, [])
+        return self.rst
