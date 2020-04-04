@@ -1,17 +1,25 @@
 class Solution:
-    def isValidSudoku(self, board):
-        memo = set()
+    def isValidSudoku(self, board) -> bool:
+        blocks = [[] for _ in range(9)]
+        rows = [[] for _ in range(9)]
+        columns = [[] for _ in range(9)]
+
         for i in range(9):
             for j in range(9):
                 if board[i][j] != ".":
-                    tmp = "(" + board[i][j] + ")"
-                    if (str(i)+tmp) in memo or (tmp+str(j)) in memo or (str(int(i/3))+ tmp+str(int(j/3))) in memo:
-                        return False
+                    block = i // 3 * 3 + j // 3
+                    num = int(board[i][j])
+                    if num not in blocks[block] and num not in rows[i] and num not in columns[j]:
+                        blocks[block].append(num)
+                        rows[i].append(num)
+                        columns[j].append(num)
                     else:
-                        memo.add(str(i) + tmp)
-                        memo.add(tmp + str(j))
-                        memo.add(str(int(i/3))+ tmp+str(int(j/3)))
+                        return False
+
+
+
         return True
+
 
 
 if __name__ == "__main__":
