@@ -4,7 +4,7 @@ class Solution:
         print(nums.sort())
         self.find([], nums.sort())
         return self.rst
-        
+
     def find(self, combo, rest):
         if len(rest) == 0:
             self.rst.append(combo)

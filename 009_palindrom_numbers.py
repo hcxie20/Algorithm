@@ -14,7 +14,7 @@ class Solution:
     def isPalindrome(self, x):
         if x < 0:
             return False
-        
+
         if x == self.reverse(x):
             return True
         else:
@@ -27,7 +27,7 @@ class Solution:
         while x != 0:
             x, r = divmod(x, 10)
             rst = rst * 10 + r
-        
+
         if rst > 2 ** 31 - 1 or rst < -2 ** 31:
             return 0
         else:

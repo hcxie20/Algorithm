@@ -1,10 +1,10 @@
-# for 2 lists with length m, n. 
+# for 2 lists with length m, n.
 # Assume m <= n
 # splite those lists in to 2 parts, respectively
-# let i, j = position to split lists 
+# let i, j = position to split lists
 # i belongs [0, m]
 # j belongs [0, n]
-# left1, right1, 
+# left1, right1,
 # left2, right2
 # j = int((m+n+1)/2) - i
 # # if m+n = even, clearly left1+2, right1+2 same length
@@ -14,7 +14,7 @@
 # # m<=n, i > 0, j = int((m+n+1)/2) - i <= int((n+n+1)/2)-i < n - i < n
 # # m<=n, i < m, j = int((m+n+1)/2) - i >= int((m+m+1)/2)-i > m - i > 0
 # and max(left1+2) <= min(right(1+2))
-# -> 
+# ->
 # left1[i-1] <= right2[j]
 # left2[j-1] <= right1[i]
 # ->
@@ -22,7 +22,7 @@
 # else(nums2[j-1]>nums1[i]): i increase
 # decrease, increase in binary search
 # 2. when i or j = 0, m, n
-# if i == 0: 
+# if i == 0:
 # max(left1+2) = nums2[j-1] < nums1[i]
 # if j == 0:
 # max(left1+2) = nums1[i-1] < nums2[j]
@@ -51,12 +51,12 @@ class Solution:
 
         maxLeft = 0
         minRight = 0
-        
+
 
         while iMin <= iMax:
             i = int((iMin + iMax)/2)
             j = int((m+n+1)/2) - i
-            
+
             if i > iMin and B[j-1] > A[i]:
                 # i increaes
                 iMin = i + 1
@@ -70,7 +70,7 @@ class Solution:
                 elif j == 0:
                     maxLeft = A[i-1]
                 else:
-                    maxLeft = max(A[i-1], B[j-1])  
+                    maxLeft = max(A[i-1], B[j-1])
                 if odd:
                     return maxLeft
 
