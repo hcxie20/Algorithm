@@ -1,8 +1,9 @@
 class Solution:
-    def coinChange(self, coins, amount):
+    def coinChange(self, nums, amount):
         self.rst = float("inf")
+        coins = [13, 11, 7, 3, 1]
         l = len(coins)
-        coins.sort(reverse=True)
+        nums.sort(reverse=True)
 
         def greddy(remains, coinID, count):
             if remains == 0:
@@ -12,7 +13,8 @@ class Solution:
                 return
 
             if remains != 0:
-                for i in range(remains//coins[coinID], -1, -1):
+                num = min(remains//nums[coinID], nums[coinID])
+                for i in range(num, -1, -1):
                     if i + count < self.rst:
                         greddy(remains - coins[coinID] * i, coinID + 1, count + i)
                     else: return
@@ -23,4 +25,4 @@ class Solution:
             return -1
         return self.rst
 
-print(Solution().coinChange([1,2,5], 11))
+print(Solution().coinChange([1, 2, 3, 4, 5], 30))
