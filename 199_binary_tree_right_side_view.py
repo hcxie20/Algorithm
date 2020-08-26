@@ -11,12 +11,10 @@ class Solution:
         queue = [(root, 0)]
 
         while queue:
-            item = queue.pop(0)
-            node = item[0]
+            node, depth = queue.pop(0)
             if node is None:
                 continue
                 
-            depth = item[1]
             if len(rst) == depth:
                 rst.append(node.val)
             queue.append((node.right, depth + 1))
