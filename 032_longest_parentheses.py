@@ -16,14 +16,13 @@ class Solution:
         return length
 
 def main():
-            s = ")()())"
-            
-            ret = Solution().longestValidParentheses(s)
+    s = ")())()()"
+    
+    ret = Solution().longestValidParentheses(s)
 
-            out = str(ret)
-            print(out)
+    out = str(ret)
+    print(out)
 
 
 if __name__ == '__main__':
     main()
-

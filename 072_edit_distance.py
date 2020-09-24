@@ -24,4 +24,5 @@ class Solution:
         return dp[-1][-1]
 
 
-print(Solution().minDistance("horse", "ros"))
+if __name__ == '__main__':
+    print(Solution().minDistance("horse", "ros"))

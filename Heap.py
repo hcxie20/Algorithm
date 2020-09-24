@@ -62,7 +62,8 @@ class Heap:
 
     @staticmethod
     def parent(i):
-        return math.floor(i/2)
+        return math.floor(i / 2)
+    
 
 if __name__ == "__main__":
     a = list(np.random.randint(0, 10, 10))

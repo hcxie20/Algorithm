@@ -135,3 +135,65 @@ import re
 obj = re.match('', 'dog')
 if re.match(r'a', 'dog'):
     print('dog')
+
+from functools import lru_cache
+from cachetools import cached, TTLCache
+
+# @cached(cache=TTLCache(maxsize=128, ttl=600))
+
+@lru_cache()
+def test(a=1, b=2):
+    return a, b
+
+
+test()
+# test([1, 2, 3], b=2)
+
+class ClassA(object):
+    def __init__(self):
+        self.__data = {}
+
+    def print(self):
+        print(self.__data)
+
+class ClassB(ClassA):
+    def __init__(self):
+        ClassA.__init__(self)
+
+    def print(self):
+        print(self.__data)
+
+# class ClassC(ClassA):
+#     def __init__(self):
+#         super(ClassC, self).__init__()
+
+#     def print(self):
+#         print(self._ClassA__data)
+
+
+# # obj = ClassB()
+# # obj.print()
+
+# obj_c = ClassC()
+# print(dir(obj_c))
+# obj_c.print()
+# pass
+
+# class C(list):
+
+#     __slots__ = 'hashed_value'
+
+#     def __init__(self, tup):
+#         self[:] = tup
+#         self.hashed_value = hash(tup)
+
+#     def __hash__(self):
+#         return self.hashed_value
+
+
+if __name__ == '__main__':
+    a = ClassA()
+    print(a.print.__name__)
+    b = ClassA()
+    print(b.print.__name__)
+    pass
