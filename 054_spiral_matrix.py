@@ -46,6 +46,3 @@ class Solution:
                 continue
 
         return rst
-
-
-

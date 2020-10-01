@@ -61,7 +61,8 @@ class Heap:
 
     @staticmethod
     def parent(i):
-        return math.floor(i/2)
+        return math.floor(i / 2)
+    
 
 
 class HeapNew(object):
