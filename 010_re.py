@@ -22,3 +22,7 @@ class Solution:
 
         return dp[-1][-1]
 
+
+if __name__ == '__main__':
+    Solution().isMatch('aab', 'c*a*b')
+

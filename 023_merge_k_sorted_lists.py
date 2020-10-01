@@ -8,7 +8,7 @@ class Solution:
     def mergeKLists(self, lists):
         if not lists:
             return []
-            
+
         listscopy = lists[:]
         while len(listscopy) != 1:
             i = 0
@@ -16,7 +16,7 @@ class Solution:
                 listscopy[i] = self.merge2Lists(listscopy[i], listscopy[i+1])
                 listscopy.pop(i+1)
                 i += 1
-        
+
         return listscopy[0]
 
     @staticmethod

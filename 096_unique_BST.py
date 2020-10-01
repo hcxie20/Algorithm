@@ -10,3 +10,8 @@ class Solution:
                 dp[i] += dp[j - 1] * dp[i - j]
 
         return dp[-1]
+
+
+if __name__ == '__main__':
+    print(Solution().numTrees(2))
+    print(Solution().numTrees(3))

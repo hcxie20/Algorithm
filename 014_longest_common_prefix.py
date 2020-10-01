@@ -16,7 +16,7 @@ class Solution:
             else:
                 return strs[0][:i]
         return strs[0][:i]
-            
+
 
 class Trie:
 

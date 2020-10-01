@@ -1,5 +1,5 @@
 class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
+    def searchInsert(self, nums, target):
         l = 0
         r = len(nums) - 1
         while l <= r:
@@ -12,3 +12,7 @@ class Solution:
                 r = mid - 1
 
         return l
+
+
+if __name__ == '__main__':
+    print(Solution().searchInsert([1, 2, 2, 3, 5], 0))
