@@ -12,11 +12,11 @@ def QuickSort(ls, p, r):
 
 def sort(ls, p, r):
     # all ls[i] <= x
-    # pivot on i + 1 
+    # pivot on i + 1
     x = ls[r]
     i = p - 1
     tmp = 0
-    for j in range(p, r):#p to r-1
+    for j in range(p, r): # p to r-1
         if ls[j] <= x:
             i = i + 1
             tmp = ls[j]
@@ -26,7 +26,6 @@ def sort(ls, p, r):
     ls[r] = ls[i + 1]
     ls[i + 1] = tmp
     return i + 1
-
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# find k list, 
+# find k list,
 # a -> b -> head -> ... -> tail -> c
 # 2 pointers point to b and c
 # b: prev
@@ -12,7 +12,7 @@
 # head.next = c
 #
 # prev = tail
-# 
+#
 
 # Definition for singly-linked list.
 class ListNode:
@@ -33,9 +33,9 @@ class Solution:
             for _ in range(k-1):
                 if end.next == None:
                     return dumbhead.next
-                
+
                 end = end.next
-            
+
             # now a -> b(prev) -> start -> ... -> end -> c(tmp)
             tmp = end.next
             end.next = None

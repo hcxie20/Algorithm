@@ -24,11 +24,11 @@ class Tire:
     def search(self, word):
         node = self.search_prefix(word)
         return node != None and node.is_end()
-    
+
     def search_with(self, prefix):
         node = self.search_prefix(prefix)
         return node != None
-        
+
 
 class TireNode:
     def __init__(self):
@@ -41,7 +41,7 @@ class TireNode:
 
     def get(self, ch):
         return self.links[ord(ch) - ord("a")]
-    
+
     def put(self, ch):
         self.links[ord(ch) - ord("a")] = TireNode()
 

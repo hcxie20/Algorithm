@@ -3,7 +3,7 @@ class Solution:
         if not matrix:
             return []
         rst = []
-        
+
         rows = len(matrix)
         columns = len(matrix[0])
 
@@ -27,7 +27,7 @@ class Solution:
                     j -= 1
                     direction = 2
                 continue
-            
+
             if direction == 2:
                 if j > level:
                     j -= 1
@@ -35,7 +35,7 @@ class Solution:
                     i -= 1
                     direction = 3
                 continue
-            
+
             if direction == 3:
                 if i > level + 1:
                     i -= 1
